@@ -42,3 +42,34 @@ mysql> describe addressbook_table;
 | email_address | varchar(50)  | YES  |     | NULL    |       |
 +---------------+--------------+------+-----+---------+-------+
 8 rows in set (0.50 sec)
+
+*************** UC3  ******************
+
+mysql> INSERT INTO addressbook_table ( firstName, lastName, address, city, state, zip, phone_number, email_address) VALUES
+    -> ('pankaj','kumar','Karnataka','Bangalore','karnataka','560100','8660386398','pankaj@gmail.com'),
+    -> ('abhishek','kumar','Karnataka','Bangalore','karnataka','560110','7687654567','abhishek@gmail.com'),
+    -> ('manish','kumar','bengal','tajpur','bangalore','7677880','7667434546','manish@gmail.com'),
+    -> ('rahul','kumar','srs','rawki','bangalore','7677880','7908767896','rahul@gmail.com');
+Query OK, 4 rows affected (0.86 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select *from addressbook_table;
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+
+| firstName | lastName | address   | city      | state     | zip     | phone_number | email_address      |
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+
+| pankaj    | kumar    | Karnataka | Bangalore | karnataka | 560100  | 8660386398   | pankaj@gmail.com   |
+| abhishek  | kumar    | Karnataka | Bangalore | karnataka | 560110  | 7687654567   | abhishek@gmail.com |
+| manish    | kumar    | bengal    | tajpur    | bangalore | 7677880 | 7667434546   | manish@gmail.com   |
+| rahul     | kumar    | srs       | rawki     | bangalore | 7677880 | 7908767896   | rahul@gmail.com    |
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+
+4 rows in set (0.26 sec)
+
+
+
+
+
+
+
+
+
+
