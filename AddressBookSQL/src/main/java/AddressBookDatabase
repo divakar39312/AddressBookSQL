@@ -12,44 +12,33 @@ mysql> SELECT DATABASE();
 +----------------+
 | addressbook_db |
 +----------------+
-1 row in set (0.00 sec)
+1 row in set
 
+**********************UC2********************
 
+mysql> CREATE TABLE addressbook_table (
+    -> firstName varchar(50) NOT NULL,
+    -> lastName  varchar(50) NOT NULL,
+    -> address varchar(100),
+    -> city varchar(20),
+    -> state varchar(50) not null,
+    -> zip varchar(10) not null,
+    -> phone_number varchar(15),
+    -> email_address varchar(50)
+    -> );
+Query OK, 0 rows affected (4.58 sec)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+mysql> describe addressbook_table;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| firstName     | varchar(50)  | NO   |     | NULL    |       |
+| lastName      | varchar(50)  | NO   |     | NULL    |       |
+| address       | varchar(100) | YES  |     | NULL    |       |
+| city          | varchar(20)  | YES  |     | NULL    |       |
+| state         | varchar(50)  | NO   |     | NULL    |       |
+| zip           | varchar(10)  | NO   |     | NULL    |       |
+| phone_number  | varchar(15)  | YES  |     | NULL    |       |
+| email_address | varchar(50)  | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+8 rows in set (0.50 sec)
