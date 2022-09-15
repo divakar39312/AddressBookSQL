@@ -1,0 +1,55 @@
+
+********************UC1********************
+
+mysql> CREATE DATABASE addressbook_DB;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE addressbook_DB;
+Database changed
+mysql> SELECT DATABASE();
++----------------+
+| DATABASE()     |
++----------------+
+| addressbook_db |
++----------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
