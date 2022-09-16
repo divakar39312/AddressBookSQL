@@ -81,9 +81,20 @@ mysql> SELECT * FROM addressbook_table;
 +-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+
 4 rows in set (0.03 sec)
 
+***************  UC5 *********************
 
+mysql> DELETE FROM addressbook_table WHERE firstName = 'rahul';
+Query OK, 1 row affected (1.43 sec)
 
-
+mysql> SELECT * FROM addressbook_table;
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+
+| firstName | lastName | address   | city      | state     | zip     | phone_number | email_address      |
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+
+| pankaj    | kumar    | Karnataka | Bangalore | karnataka | 100000  | 8660386398   | pankaj@gmail.com   |
+| abhishek  | kumar    | Karnataka | Bangalore | karnataka | 560110  | 7687654567   | abhishek@gmail.com |
+| manish    | kumar    | bengal    | tajpur    | bangalore | 7677880 | 7667434546   | manish@gmail.com   |
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+
+3 rows in set (0.08 sec)
 
 
 
