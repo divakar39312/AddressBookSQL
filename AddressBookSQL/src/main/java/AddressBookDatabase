@@ -116,5 +116,17 @@ mysql> SELECT firstName FROM addressbook_table WHERE city = 'Bangalore';
 +-----------+
 2 rows in set (0.00 sec)
 
+************************** UC7 **********************************
+
+mysql> SELECT state, city, COUNT(firstName) FROM addressbook_table GROUP BY state, city;
++-----------+-----------+------------------+
+| state     | city      | COUNT(firstName) |
++-----------+-----------+------------------+
+| karnataka | Bangalore |                2 |
+| bangalore | tajpur    |                1 |
++-----------+-----------+------------------+
+2 rows in set (0.27 sec)
+
+
 
 
