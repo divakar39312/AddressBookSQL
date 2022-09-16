@@ -156,3 +156,72 @@ mysql> SELECT * FROM addressbook_table WHERE state = 'karnataka' ORDER BY firstN
 | pankaj    | kumar    | Karnataka | Bangalore | karnataka | 100000 | 8660386398   | pankaj@gmail.com   |
 +-----------+----------+-----------+-----------+-----------+--------+--------------+--------------------+
 2 rows in set (0.13 sec)
+
+*************** UC9 ******************************
+
+mysql> ALTER TABLE addressbook_table ADD COLUMN type varchar(50), ADD bookName varchar(15) NOT NULL ;
+Query OK, 0 rows affected (3.96 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE addressbook_table;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| firstName     | varchar(50)  | NO   |     | NULL    |       |
+| lastName      | varchar(50)  | NO   |     | NULL    |       |
+| address       | varchar(100) | YES  |     | NULL    |       |
+| city          | varchar(20)  | YES  |     | NULL    |       |
+| state         | varchar(50)  | NO   |     | NULL    |       |
+| zip           | varchar(10)  | NO   |     | NULL    |       |
+| phone_number  | varchar(15)  | YES  |     | NULL    |       |
+| email_address | varchar(50)  | YES  |     | NULL    |       |
+| type          | varchar(50)  | YES  |     | NULL    |       |
+| bookName      | varchar(15)  | NO   |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+10 rows in set (0.47 sec)
+mysql> SELECT * FROM addressbook_table;
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+------+----------+
+| firstName | lastName | address   | city      | state     | zip     | phone_number | email_address      | type | bookName |
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+------+----------+
+| pankaj    | kumar    | Karnataka | Bangalore | karnataka | 100000  | 8660386398   | pankaj@gmail.com   | NULL |          |
+| abhishek  | kumar    | Karnataka | Bangalore | karnataka | 560110  | 7687654567   | abhishek@gmail.com | NULL |          |
+| manish    | kumar    | bengal    | tajpur    | bangalore | 7677880 | 7667434546   | manish@gmail.com   | NULL |          |
+| Arun      | Kumar    | SRa       | Cuttack   | punjab    | 753890  | 9689765678   | arun@live.com      | NULL |          |
+| anita     | routal   | jalandhar | Kalahandi | punjab    | 766001  | 7868543456   | anita@live.com     | NULL |          |
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+------+----------+
+5 rows in set (0.02 sec)
+
+mysql> UPDATE addressbook_table SET bookName = 'One' , type = 'family' WHERE firstName = 'pankaj';
+Query OK, 1 row affected (0.15 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE addressbook_table SET bookName = 'Two' , type = 'family' WHERE firstName = 'abhishek';
+Query OK, 1 row affected (0.42 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE addressbook_table SET bookName = 'One' , type = 'friend' WHERE firstName = 'manish';
+Query OK, 1 row affected (0.21 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE addressbook_table SET bookName = 'One' , type = 'profession' WHERE firstName = 'arun';
+Query OK, 1 row affected (0.11 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE addressbook_table SET bookName = 'Two' , type = 'friend' WHERE firstName = 'anita';
+Query OK, 1 row affected (0.11 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM addressbook_table;
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+------------+----------+
+| firstName | lastName | address   | city      | state     | zip     | phone_number | email_address      | type       | bookName |
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+------------+----------+
+| pankaj    | kumar    | Karnataka | Bangalore | karnataka | 100000  | 8660386398   | pankaj@gmail.com   | family     | One      |
+| abhishek  | kumar    | Karnataka | Bangalore | karnataka | 560110  | 7687654567   | abhishek@gmail.com | family     | Two      |
+| manish    | kumar    | bengal    | tajpur    | bangalore | 7677880 | 7667434546   | manish@gmail.com   | friend     | One      |
+| Arun      | Kumar    | SRa       | Cuttack   | punjab    | 753890  | 9689765678   | arun@live.com      | profession | One      |
+| anita     | routal   | jalandhar | Kalahandi | punjab    | 766001  | 7868543456   | anita@live.com     | friend     | Two      |
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+------------+----------+
+5 rows in set (0.02 sec)
+
+
+
