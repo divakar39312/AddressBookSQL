@@ -127,6 +127,32 @@ mysql> SELECT state, city, COUNT(firstName) FROM addressbook_table GROUP BY stat
 +-----------+-----------+------------------+
 2 rows in set (0.27 sec)
 
+*************** UC8 *********************************
 
 
+mysql> INSERT INTO addressbook_table (firstName, lastName, address, city, state, zip, phone_number, email_address) VALUES
+    -> ('Arun','Kumar','SRa','Cuttack','punjab','753890','9689765678','arun@live.com'),
+    -> ('anita','routal','jalandhar','Kalahandi','punjab','766001','7868543456','anita@live.com');
+Query OK, 2 rows affected (1.25 sec)
+Records: 2  Duplicates: 0  Warnings: 0
 
+mysql>  SELECT * FROM addressbook_table;
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+
+| firstName | lastName | address   | city      | state     | zip     | phone_number | email_address      |
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+
+| pankaj    | kumar    | Karnataka | Bangalore | karnataka | 100000  | 8660386398   | pankaj@gmail.com   |
+| abhishek  | kumar    | Karnataka | Bangalore | karnataka | 560110  | 7687654567   | abhishek@gmail.com |
+| manish    | kumar    | bengal    | tajpur    | bangalore | 7677880 | 7667434546   | manish@gmail.com   |
+| Arun      | Kumar    | SRa       | Cuttack   | punjab    | 753890  | 9689765678   | arun@live.com      |
+| anita     | routal   | jalandhar | Kalahandi | punjab    | 766001  | 7868543456   | anita@live.com     |
++-----------+----------+-----------+-----------+-----------+---------+--------------+--------------------+
+5 rows in set (0.02 sec)
+
+mysql> SELECT * FROM addressbook_table WHERE state = 'karnataka' ORDER BY firstName;
++-----------+----------+-----------+-----------+-----------+--------+--------------+--------------------+
+| firstName | lastName | address   | city      | state     | zip    | phone_number | email_address      |
++-----------+----------+-----------+-----------+-----------+--------+--------------+--------------------+
+| abhishek  | kumar    | Karnataka | Bangalore | karnataka | 560110 | 7687654567   | abhishek@gmail.com |
+| pankaj    | kumar    | Karnataka | Bangalore | karnataka | 100000 | 8660386398   | pankaj@gmail.com   |
++-----------+----------+-----------+-----------+-----------+--------+--------------+--------------------+
+2 rows in set (0.13 sec)
