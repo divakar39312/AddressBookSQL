@@ -224,4 +224,30 @@ mysql> SELECT * FROM addressbook_table;
 5 rows in set (0.02 sec)
 
 
+--------------- UC10----------------------
+
+mysql> SELECT COUNT(firstName) FROM addressBook_table WHERE type ='family';
++------------------+
+| COUNT(firstName) |
++------------------+
+|                2 |
++------------------+
+1 row in set (0.02 sec)
+
+mysql> SELECT COUNT(firstName) FROM addressBook_table WHERE type ='friend';
++------------------+
+| COUNT(firstName) |
++------------------+
+|                2 |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(firstName) FROM addressBook_table WHERE type ='profession';
++------------------+
+| COUNT(firstName) |
++------------------+
+|                1 |
++------------------+
+1 row in set (0.00 sec)
+
 
